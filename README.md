@@ -1,6 +1,6 @@
 # Intralot-Training
 
 ## Steps to install Terraform on:
-1. [Windows]()
-2. [Ubuntu]
-3. [MacOS](
+1. [Windows](installations/windows.md)
+2. [Ubuntu](installations/linux.md)
+3. [MacOS](installations/macos.md)
