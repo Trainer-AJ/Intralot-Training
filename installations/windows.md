@@ -1,6 +1,6 @@
 # Install Terraform
-1. Quick Method
-2. Time consuming Method
+1. [Quick Method](#quick-method)
+2. [Time consuming Method](#long-method)
 
 
 # Quick Method
