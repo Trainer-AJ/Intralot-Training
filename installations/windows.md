@@ -38,23 +38,3 @@ Before you start the installation process, ensure you have:
 ![Verifying Installation](https://example.com/verify-installation)
 
 
-## How to Install Terraform on macOS
-
-1. **Install Using Homebrew**:
-   You can install Terraform using Homebrew:
-   ```bash
-   brew install terraform
-   ```
-
-2. **Verify Installation**:
-   After installation, verify Terraform is correctly installed by running:
-   ```bash
-   terraform --version
-   ```
-
-## Conclusion
-
-This guide covered the installation of Terraform on Windows, Linux, and macOS. Following these steps should ensure that Terraform is installed and ready for use on your system.
-```
-
-You can replace the `![Image](URL)` placeholders with actual URLs for the images if needed. Let me know if you need anything else!
