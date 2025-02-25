@@ -1,4 +1,50 @@
-# How to Install Terraform on Windows, macOS, and Linux
+# Install Terraform
+1. Quick Method
+2. Time consuming Method
+
+
+# Quick Method
+1. Open PowerShell as Administrator.
+2. Run the script below by copying and pasting it into the PowerShell window.
+> After the script finishes, Terraform should be installed, and you can verify the installation by running terraform -v in PowerShell.
+```ps1
+# Step 1: Define the URL and paths
+$terraformUrl = "https://releases.hashicorp.com/terraform/1.10.5/terraform_1.10.5_windows_386.zip"
+$downloadPath = "$env:USERPROFILE\Downloads"
+$extractPath = "$downloadPath\terraform"
+
+# Step 2: Download the Terraform ZIP file
+Write-Host "Downloading Terraform..."
+Invoke-WebRequest -Uri $terraformUrl -OutFile "$downloadPath\terraform.zip"
+
+# Step 3: Extract the ZIP file
+Write-Host "Extracting Terraform ZIP..."
+Expand-Archive -Path "$downloadPath\terraform.zip" -DestinationPath $extractPath
+
+# Step 4: Move Terraform to C:\terraform
+Write-Host "Moving Terraform to C:\terraform..."
+New-Item -ItemType Directory -Force -Path "C:\terraform"
+Move-Item -Path "$extractPath\terraform.exe" -Destination "C:\terraform\terraform.exe"
+
+# Step 5: Update the system PATH environment variable
+Write-Host "Updating system PATH..."
+[System.Environment]::SetEnvironmentVariable("Path", "$env:Path;C:\terraform", [System.EnvironmentVariableTarget]::Machine)
+
+# Step 6: Verify the installation
+Write-Host "Terraform installation complete. Verifying..."
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "terraform -v"
+
+```
+
+3. Close the terminal => open it again ==> type `terraform -v `
+you should get response similar to below:
+```sh
+PS C:\Users\aj> terraform -v
+Terraform v1.10.5
+on windows_386
+```
+
+# Long Method
 
 Developed by HashiCorp, Terraform is a powerful open-source Infrastructure as Code (IaC) tool that facilitates infrastructure management and creation on-premises and in the cloud. However, installing Terraform can be challenging without proper guidance. This guide will walk you through the installation process on Windows, macOS, and Linux.
 
