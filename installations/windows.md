@@ -9,7 +9,7 @@
 > After the script finishes, Terraform should be installed, and you can verify the installation by running terraform -v in PowerShell.
 ```ps1
 # Step 1: Define the URL and paths
-$terraformUrl = "https://releases.hashicorp.com/terraform/1.10.5/terraform_1.10.5_windows_386.zip"
+$terraformUrl = "https://releases.hashicorp.com/terraform/1.11.0/terraform_1.11.0_windows_386.zip"
 $downloadPath = "$env:USERPROFILE\Downloads"
 $extractPath = "$downloadPath\terraform"
 
