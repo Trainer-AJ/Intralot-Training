@@ -14,3 +14,6 @@ az --version
 ```
 ## Install VS Code - [Download from here](https://code.visualstudio.com/download)
 
+## Install git - not Now... AJ will tell when to download
+[PICK your OS and Download](https://git-scm.com/downloads)
+
