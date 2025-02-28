@@ -1,5 +1,5 @@
 # AIM: Create a Storage account after creating a Resource Group
-# 
+# docs: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account
 
 terraform {
   required_providers {
