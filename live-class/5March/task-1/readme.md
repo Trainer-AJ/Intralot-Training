@@ -4,7 +4,7 @@
 # 4. it should ask for variables value.... provide below
 ```
 location = "eastus"
-dns_servers - "[10.0.0.6], [10.0.0.9]"
+dns_servers - ["10.0.0.6", "10.0.0.9"]
 ```
 # 5. download terraform tfvars now
 # run terraform plan and apply 
