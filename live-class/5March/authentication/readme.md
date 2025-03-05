@@ -10,8 +10,9 @@ az login
 3. choose work or school account
 
 4. login with xtremelabs.us creds
+  > press enter if it asks anything :) 
 
-5. run commands
+6. run commands
 ```sh
 az account show
 ```
