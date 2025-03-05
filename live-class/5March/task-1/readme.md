@@ -7,7 +7,7 @@
 refrence links:
 1. variables : https://developer.hashicorp.com/terraform/language/values/variables
 2. resource groups: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group
-3. check my code [here]()
+3. check my code [here](https://github.com/Trainer-AJ/Intralot-Training/tree/main/live-class/5March/task-1/DIY)
 ----------------------------------------------
 # 1. Create a new folder
 # 2. Download main.tf, providers.tf, variables.tf
