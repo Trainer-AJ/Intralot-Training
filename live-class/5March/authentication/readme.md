@@ -1,8 +1,11 @@
 # AZ CLI 
 
 1. install az cli (if not already installed)
+```sh
+az --verison
+```
 
-2. open terminal 
+3. open terminal 
 ```
 az login
 ```
