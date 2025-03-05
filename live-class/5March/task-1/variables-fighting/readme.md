@@ -5,7 +5,6 @@ To identify variables precendence
 
 ```sh
 terraform init
-$env:"rg-name" = "environment-vars"
 terraform apply --auto-approve
 ```
 
