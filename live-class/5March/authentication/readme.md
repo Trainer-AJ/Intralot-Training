@@ -20,3 +20,4 @@ az login
 az account show
 ```
 6. to confirm everything working
+7. in `providers.tf` ==> put your values 
