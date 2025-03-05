@@ -1,0 +1,28 @@
+trigger: 
+- main
+
+steps:
+- task: AzureCLI@2
+  displayName: 'Preapre-Infra'
+  inputs:
+  # --------------------------------- CHNAGE BELOW VALUE -------------------------------===
+    azureSubscription: 'Azure subscription 1 (61e7c00a-02db-4067-ac2c-79ab463cb69b)'
+  # --------------------------------------------------------------------------------
+    scriptType: bash
+    scriptLocation: inlineScript
+    inlineScript: |
+     RG=pipeline-classic
+     NAME=classic-pipeline-876
+     az group create -n $RG -l westus
+     az appservice plan create -g $RG -n MyPlan --sku s1 -l eastus
+     az webapp create -g $RG -p MyPlan -n $NAME
+     
+- task: ArchiveFiles@2
+  displayName: 'Archive web-page/index.html'
+  inputs:
+    rootFolderOrFile: 'web-page/index.html'
+    
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
