@@ -4,7 +4,8 @@ To identify variables precendence
 # commands to run : one by one
 
 ```sh
-$env:rg-name = "environment-vars"
+terraform init
+$env:"rg-name" = "environment-vars"
 terraform apply --auto-approve
 ```
 
