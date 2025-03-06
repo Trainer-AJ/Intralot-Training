@@ -18,8 +18,8 @@ provider "azurerm" {
 module "nickname" {
   source = "github.com/Trainer-AJ/Intralot-Training/labs/codes/modules-demo//blob_static_site?ref=main"
   
-  index_document        = "../content/index.html"
-  error_404_document    = "../content/custom_error.html"
+  index_document        = "~/labs/codes/modules-demo/content"
+  error_404_document    = "~/content/custom_error.html"
 }
 
 
