@@ -1,3 +1,6 @@
+### Add the below code in backend.tf 
+[documentation here](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_server)
+
 ### RUN Below commands in Azure CLoudshell to auto create storage account
 
 ```sh
