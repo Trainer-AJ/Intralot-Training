@@ -19,7 +19,7 @@ If Git is not installed, download and install it from [git-scm.com](https://git-
 
 ### **2. Configure Git (First-Time Setup)**
 Set your username and email (required for commits):
-> provide Github username & password
+> provide Github username & email 
 ```sh
 git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
