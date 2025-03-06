@@ -13,7 +13,7 @@ git --version
    Open your terminal (or Git Bash) and run the following command, replacing the URL with the one you copied:
 
    ```bash
-   git clone [https://github.com/username/repository-name.git](https://github.com/Trainer-AJ/Intralot-Training.git)
+   git clone https://github.com/Trainer-AJ/upload-code-here.git
    ```
 
    This will clone the repository to your local machine.
@@ -22,7 +22,7 @@ git --version
    Once the cloning process is complete, navigate into the directory of the cloned repository:
 
    ```bash
-   cd Intralot-Training
+   cd upload-code-here
    ```
 
 
