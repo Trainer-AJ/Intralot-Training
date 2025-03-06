@@ -43,9 +43,11 @@ git config --list
 ---
 
 ### **4. Initialize Git Locally**
-In your terminal or command prompt, navigate to your project folder:
+In your `local` terminal or command prompt, navigate to your project folder:
 ```sh
-cd path/to/your/project
+mkdir demo
+cd demo
+echo "This is git demo" > readme.md
 ```
 Initialize Git:
 ```sh
