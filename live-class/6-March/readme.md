@@ -19,7 +19,7 @@ ACCOUNT_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP --ac
 az storage container create --name $CONTAINER_NAME --account-name $STORAGE_ACCOUNT --account-key $ACCOUNT_KEY
 ```
 
-### Replace the values with your values in backend.tf
+### Replace the values of previusoly created storage account container with your values in backend.tf (line 11-15)
 
 ### authenticate terraform 
 ```sh
