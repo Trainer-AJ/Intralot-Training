@@ -27,5 +27,12 @@ az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/your-subs
 ```
 OR 
 use `az login ` 
+OR
+```sh
+$env:ARM_CLIENT_ID = "00000000-0000-0000-0000-000000000000"
+$env:ARM_CLIENT_SECRET = "12345678-0000-0000-0000-000000000000"
+$env:ARM_TENANT_ID = "10000000-0000-0000-0000-000000000000"
+$env:ARM_SUBSCRIPTION_ID = "20000000-0000-0000-0000-000000000000"
+```
 
 ### run terraform init then apply
