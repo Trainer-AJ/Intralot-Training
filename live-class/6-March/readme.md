@@ -1,4 +1,4 @@
-### RUN BElow commands in Azure CLoudshell to auto create storage account
+### RUN Below commands in Azure CLoudshell to auto create storage account
 
 ```sh
 # Set environment variables (replace with your values)
@@ -25,5 +25,7 @@ az storage container create --name $CONTAINER_NAME --account-name $STORAGE_ACCOU
 ```sh
 az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/your-subscription-id"
 ```
+OR 
+use `az login ` 
 
-### run terraform init then  apply
+### run terraform init then apply
