@@ -1,0 +1,39 @@
+
+Git 
+- branch
+- commit in both branch (website)
+- merge (website)
+- file explorer termnal split screen
+- two people make change in same file same line
+- create PR
+
+ 1        0.046 cd C:\Users\anana\D…
+   2        0.142 git checkout -b vm/…
+   3        0.074 echo "wow" > test.t…
+   4        0.034 echo "wow" > test1.…
+   5        0.053 echo "wow" > test2.…
+   6        0.088 git add .
+   7        0.102 git status
+   8        0.111 git restore --stage…
+   9        0.080 git status
+  10        0.188 git commit -m "1"
+  11        0.099 git add .\test2.txt
+  12        0.165 git commit -m "2"
+  13        0.120 git add .\test3.txt
+  14        0.075 git status
+  15        0.100 git add .\test1.txt
+  16        0.150 git commit -m "3"
+  17        3.258 git log
+  18        0.146 git checkout main
+  19        0.138 git checkout vm/roc…
+
+Azure Pipeline
+- what? when?
+- components
+- Hello World
+- Service connection 
+- first terraform 
+a. exention
+b. AZ CLI 
+c. 
+
