@@ -1,3 +1,3 @@
-Chnage made by git-of-aj
+Chnage made by trainer-AJ
 
-in the branch conflict 
+in the branch conflict demo by AJ
