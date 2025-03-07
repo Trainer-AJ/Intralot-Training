@@ -1,3 +1,3 @@
-Chnage made by trainer-AJ
+SOlved merge conflict 
 
-in the branch conflict demo by AJ
+chnage made by Trainer-AJ
