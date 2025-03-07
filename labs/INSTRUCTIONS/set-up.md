@@ -9,9 +9,7 @@ lab:
 
 > **Note**: Start at step 3, if you do already have a **personal Microsoft Account** setup and an active Azure Subscription linked to that account.
 
-1. Use a private browser session to get a new **personal Microsoft Account (MSA)** at `https://account.microsoft.com`.
-
-1. Using the same browser session, sign up for a free Azure subscription at `https://azure.microsoft.com/free`.
+### launch your Lab in xtremelabs, launch labs => login to Azure Portal using the lab credentials and continue
 
 1. Open a browser and navigate to Azure portal at `https://portal.azure.com`, then search at the top of the Azure portal screen for **Azure DevOps**. In the resulting page, click **Azure DevOps organizations**.
 
