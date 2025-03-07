@@ -9,7 +9,7 @@ lab:
 
 > **Note**: DO `NOT USE` INTRALOT ACCOUNT FOR AZURE PORTAL / AZURE DEVOPS
 
-### launch your Lab in xtremelabs, launch labs => login to Azure Portal using the lab credentials and continue
+### launch your Lab in xtremelabs [HERE](https://labs.xtremelabs.io/Account/LogOn?returnUrl=%2fMyAccount), launch labs => login to Azure Portal using the lab credentials IN `INCOGNITO WINDOW ` and continue
 
 1. Open a browser and navigate to Azure portal at `https://portal.azure.com`, then search at the top of the Azure portal screen for **Azure DevOps**. In the resulting page, click **Azure DevOps organizations**.
 
