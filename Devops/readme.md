@@ -1,3 +1,3 @@
-Chnage made by trainer-aj
+SOlved merge conflict 
 
-this is dmeo
+chnage made by Trainer-AJ
