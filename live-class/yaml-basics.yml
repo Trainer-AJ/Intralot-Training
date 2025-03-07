@@ -1,0 +1,11 @@
+# COmments
+# AIM : to teach YAML basics
+
+# name = value 
+what : grocery
+name: aj
+age: 456000990
+
+list:
+        - item1
+        - item2
