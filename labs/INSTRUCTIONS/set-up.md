@@ -7,7 +7,7 @@ lab:
 
 ## Instructions to create an Azure DevOps Organization (you only have to do this once)
 
-> **Note**: Start at step 3, if you do already have a **personal Microsoft Account** setup and an active Azure Subscription linked to that account.
+> **Note**: DO `NOT USE` INTRALOT ACCOUNT FOR AZURE PORTAL / AZURE DEVOPS
 
 ### launch your Lab in xtremelabs, launch labs => login to Azure Portal using the lab credentials and continue
 
