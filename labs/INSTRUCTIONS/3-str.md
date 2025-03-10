@@ -4,13 +4,13 @@
 run below commands:
 ```
 mkdir folder1
-cd folder`
+cd folder
 code 10march.tf
 ```
 
-### write your terraform code to create resource group and storage account in that resource group
+### write your terraform code in `10march.tf` file to create resource group and storage account in that resource group
 
-### Save your file
+### Save your `10march.tf` file
 
 ### run below commands one by one now:
 
@@ -21,5 +21,5 @@ terraform plan
 
 terraform apply
 ```
-
+### check on azure portal... you should be having a storage account now
 ref link for storage account: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account
