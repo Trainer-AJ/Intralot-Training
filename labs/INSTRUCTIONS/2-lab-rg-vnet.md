@@ -1,5 +1,5 @@
 ### From the current code of your main.tf file :
-copy below part of the code (we will use it later ):
+copy below part FROM `YOUR CODE` DO NOT COPY below code (we will use it later ):
 ```tf
 provider "azurerm" {
   # Configuration options
