@@ -1,3 +1,4 @@
+### Azurerm Providers documentation: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
 ### Create a resource group and storage account in that resource group:
 
 run below commands:
@@ -20,3 +21,5 @@ terraform plan
 
 terraform apply
 ```
+
+ref link for storage account: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account
