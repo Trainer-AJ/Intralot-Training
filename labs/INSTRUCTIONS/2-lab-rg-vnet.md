@@ -26,6 +26,7 @@ terraform {
   }
 }
 
+# ------------------- DON"T FORGET TO PROVIDE YOUR VALUES -------------------------
 provider "azurerm" {
   # Configuration options
   features {}
