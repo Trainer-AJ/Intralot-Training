@@ -97,3 +97,8 @@ terraform apply --auto-approve
 ```
 
 ## check in azure portal: YOu can see two resource groups and a virtual network inside `example` resource group
+
+# IF done 😊
+## Extra task:
+> if want to do more try creating a subnet with address range: [10.0.99.0/24] in the previously created vnet
+> refrence link: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet
