@@ -76,7 +76,7 @@ resource "azurerm_resource_group" "rg2" {
 
 
 resource "azurerm_virtual_network" "vnet1" {
-  name                = "example-vnet"
+  name                = "terraform-vnet"
   address_space       = ["10.0.0.0/16"]
 #   location            = "West Europe"
 location = azurerm_resource_group.rg1.location
@@ -96,4 +96,4 @@ terraform plan
 terraform apply --auto-approve
 ```
 
-## check in azure portal
+## check in azure portal: YOu can see two resource groups and a virtual network inside `example` resource group
