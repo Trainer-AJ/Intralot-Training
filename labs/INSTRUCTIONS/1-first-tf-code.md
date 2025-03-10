@@ -1,4 +1,7 @@
-
+# get Azure creds
+> go to https://labs.xtremelabs.io/Account/LogOn?returnUrl=%2fMyAccount
+1. login and launch lab
+2. click on cloudexpress and you see azure credentials
 ### Step 1: Create a Service Principal using Azure Cloud Shell
 
 1. **Open Azure Cloud Shell**:  
