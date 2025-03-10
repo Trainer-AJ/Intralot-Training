@@ -1,5 +1,5 @@
-## THIS IS MY EDIT IN MAIN BRANCH ....
-## NO ONE CAN STOP ME ::))
+# labs:
+1. [First lab -- create resource group](https://github.com/Trainer-AJ/Intralot-Training/blob/main/labs/INSTRUCTIONS/1-first-tf-code.md)
 
 # Intralot-Training
 
