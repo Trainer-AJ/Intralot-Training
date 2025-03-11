@@ -11,4 +11,11 @@ az login
 run az account show in your local terminal
 
 > make sure you are in approach-2 folder
- 
+
+## test it
+```sh
+terraform init
+terraform plan
+terraform validate
+terraform apply -auto-approve
+```
