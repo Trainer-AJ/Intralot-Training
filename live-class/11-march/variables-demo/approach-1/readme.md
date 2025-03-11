@@ -20,3 +20,18 @@ terraform apply --auto-approve -var="region=westus"
 ### if that much done
 ### Extra activity 
 ### Create a VNet in Azure with its addrress space and region and name as a variable
+```sh
+git pull
+terraform apply --auto-approve
+```
+
+## now rename terraform.tfvars to vnet.tfvars then run terraform apply once again....
+## our goal is to have a virtual network:
+> name = "tfvars-vnet1" & region = "centralindia"
+
+😭 didn't worked as expected...
+
+now run 
+```sh
+terraform apply -auto-approve -var-file="vnet.tfvars"
+```
