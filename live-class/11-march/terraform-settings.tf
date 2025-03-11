@@ -1,3 +1,8 @@
+/*
+RUN TERRAFORM INIT
+OBSERVE THE .terraform.lock.hcl file  ==> notice which version and constraint you have there !!!
+*/
+
 ###########################################################
 # This is just a checklist for terraform to decide 
 # if to RUN the code 
