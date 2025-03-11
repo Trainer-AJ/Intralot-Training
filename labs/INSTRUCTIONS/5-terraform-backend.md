@@ -59,10 +59,51 @@ Here’s an example configuration for the backend:
 ```hcl
 terraform {
   backend "azurerm" {
-    resource_group_name   = "my-resource-group"
-    storage_account_name  = "myterraformstate"
-    container_name        = "tfstatestorage"
+    resource_group_name   = ""
+    storage_account_name  = ""
+    container_name        = ""
     key                   = "terraform.tfstate"
+  }
+}
+
+provider "azurerm" {
+      features{}
+}
+
+provider "random" {
+  # Configuration options
+}
+
+variable "user" {
+  default = "aj"
+}
+variable "pswd" {
+  default = "nooPho4ae5ooy"
+}
+resource "random_string" "unique_server_name" {
+  length  = 5
+  special = false
+  upper   = false
+  numeric = true
+}
+resource "azurerm_resource_group" "rg" {
+   name = "tf"
+   location = "westus"
+
+}
+resource "azurerm_mssql_server" "example" {
+  name                         = "mssqlserver-${random_string.unique_server_name.result}"
+  resource_group_name          = azurerm_resource_group.rg.name
+  location                     = azurerm_resource_group.rg.location
+  version                      = "12.0"
+  administrator_login          = var.user
+  administrator_login_password = var.pswd
+  minimum_tls_version          = "1.2"
+
+  tags = {
+    environment = "production"
+    owner = "aj"
+    app_name = "myapp"
   }
 }
 ```
@@ -70,32 +111,6 @@ terraform {
 - Replace `"my-resource-group"`, `"myterraformstate"`, and `"tfstatestorage"` with your own resource group, storage account name, and blob container name, respectively.
 - The `key` is the name of the state file (e.g., `terraform.tfstate`).
 
-### Step 5: Configure the Azure Provider
-In the same `main.tf` file, configure the Azure provider:
-
-```hcl
-provider "azurerm" {
-  features {}
-}
-```
-
-### Step 6: Define the Azure SQL Server Resource
-Now, add the Azure SQL Server resource in the `main.tf` file.
-
-```hcl
-resource "azurerm_sql_server" "example" {
-  # Define the name of the SQL Server
-  name                         = "my-sql-server"
-  resource_group_name          = "my-resource-group"
-  location                     = "East US"
-  version                      = "12.0"
-  administrator_login          = "sqladmin"
-  administrator_login_password = "P@ssw0rd1234"  # Change to a secure password
-}
-```
-
-- Replace the SQL server name (`my-sql-server`), resource group name, and location with your desired values.
-- Choose a secure password for the `administrator_login_password`.
 
 ### Step 7: Initialize Terraform
 Before applying any changes, you need to initialize Terraform. Run the following command in your terminal:
@@ -147,34 +162,3 @@ If you want to clean up and remove all created resources, you can run the follow
 ```bash
 terraform destroy
 ```
-
-### Summary of Files:
-- **main.tf** – Contains both the backend configuration, provider configuration, and the resources.
-
-```hcl
-terraform {
-  backend "azurerm" {
-    resource_group_name   = "my-resource-group"
-    storage_account_name  = "myterraformstate"
-    container_name        = "tfstatestorage"
-    key                   = "terraform.tfstate"
-  }
-}
-
-provider "azurerm" {
-  features {}
-}
-
-resource "azurerm_sql_server" "example" {
-  name                         = "my-sql-server"
-  resource_group_name          = "my-resource-group"
-  location                     = "East US"
-  version                      = "12.0"
-  administrator_login          = "sqladmin"
-  administrator_login_password = "P@ssw0rd1234"
-}
-```
-
----
-
-Let me know if you need any help or further clarification!
