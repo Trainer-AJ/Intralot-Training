@@ -18,3 +18,5 @@ terraform {
 provider "azurerm" {
   # Configuration options
 }
+
+############## Docs link: https://developer.hashicorp.com/terraform/language/expressions/version-constraints#operators
