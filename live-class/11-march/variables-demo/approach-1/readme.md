@@ -24,7 +24,7 @@ terraform apply --auto-approve -var="region=westus"
 git pull
 terraform apply --auto-approve
 ```
-
+# ...after terraform destroy...
 ## now rename terraform.tfvars to vnet.tfvars then run terraform apply once again....
 ## our goal is to have a virtual network:
 > name = "tfvars-vnet1" & region = "centralindia"
