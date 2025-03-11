@@ -16,3 +16,7 @@ cd Intralot-Training/live-class/11-march/variables-demo/approach-1
 ```sh
 terraform apply --auto-approve -var="region=westus" 
 ```
+
+### if that much done
+### Extra activity 
+### Create a VNet in Azure with its addrress space and region and name as a variable
