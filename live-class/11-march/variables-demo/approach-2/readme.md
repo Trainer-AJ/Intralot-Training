@@ -12,6 +12,8 @@ run az account show in your local terminal
 
 > make sure you are in approach-2 folder
 
+**Put your subscription_id in providers.tf file**
+
 ## test it
 ```sh
 terraform init
