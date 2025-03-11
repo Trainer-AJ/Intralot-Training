@@ -5,8 +5,8 @@ resource "azurerm_resource_group" "example" {
 
 resource "azurerm_public_ip" "example" {
   name                = "acceptanceTestPublicIp1"
-  resource_group_name = azurerm_resource_group.example.name
-  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.first.name
+  location            = azurerm_resource_group.first.location
   allocation_method   = "Static"
 
   tags = {
@@ -16,8 +16,9 @@ resource "azurerm_public_ip" "example" {
 
 resource "azurerm_network_interface" "example" {
   name                = "example-nic"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
+  location            = azurerm_resource_group.first.location
+  # NIC and vnet should be in the same resource group
+  resource_group_name = azurerm_resource_group.first.name
 
   
 
