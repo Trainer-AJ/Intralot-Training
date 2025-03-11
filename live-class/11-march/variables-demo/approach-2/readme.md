@@ -21,3 +21,10 @@ terraform plan
 terraform validate
 terraform apply -auto-approve
 ```
+
+## Terraform output
+### git pull
+### notice new file appears... 0-public-ip.tf
+### run terraform apply --auto-approve
+
+## notice you get output of public ip
