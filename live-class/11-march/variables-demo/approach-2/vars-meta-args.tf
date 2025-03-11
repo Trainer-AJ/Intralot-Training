@@ -1,22 +1,4 @@
 
-# ----------------------------------------------------
-# LAB-4 : Variables and Meta Arguments 
-# AUTHOR: Ananay Ojha
-# ---------------------------------------------------
-terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-    }
-  }
-  required_version = ">= 1.10.0"
-}
-
-provider "azurerm" {
-  features {}
-  # not providing subscription_id, client_id, client_secret, tenant_id here
-  # as we are using environment variables to authenticate
-}
 
 # ------------------ PROMPT FOR VARIABLE --------------
 
