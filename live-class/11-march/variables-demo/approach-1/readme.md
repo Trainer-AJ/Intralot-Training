@@ -35,3 +35,7 @@ now run
 ```sh
 terraform apply -auto-approve -var-file="vnet.tfvars"
 ```
+
+# any-name.auto.tfvars auto loads
+so when you have these file
+just `terraform apply`
