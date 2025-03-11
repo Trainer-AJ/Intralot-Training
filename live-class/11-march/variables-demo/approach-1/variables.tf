@@ -27,3 +27,5 @@ variable "vnet_region" {
   default = "East US"
   
 }
+
+variable "acr_name" {}
