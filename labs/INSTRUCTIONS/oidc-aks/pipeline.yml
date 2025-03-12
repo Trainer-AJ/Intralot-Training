@@ -19,7 +19,7 @@ steps:
 #     RunAsPreJob: true
 - task: AzureCLI@2
   name: set_variables
-  displayName: set terraform credentials
+  displayName: setup 
   inputs:
     azureSubscription: 'oidc'
     scriptType: 'pscore'
@@ -30,8 +30,9 @@ steps:
       Write-Host "##vso[task.setvariable variable=ARM_CLIENT_ID]$env:servicePrincipalId"
       Write-Host "##vso[task.setvariable variable=ARM_SUBSCRIPTION_ID]$(az account show --query id -o tsv)"
       Write-Host "##vso[task.setvariable variable=ARM_TENANT_ID]$env:tenantId"
-      terraform init
-      terraform plan
+      terraform init -upgrade
+      terraform plan -out tfplan  
+      terraform show -json tfplan > tfplan.json   
     addSpnToEnvironment: true
     workingDirectory: $(DIR)
   env:
