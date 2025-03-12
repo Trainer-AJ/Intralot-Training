@@ -37,6 +37,8 @@ steps:
     workingDirectory: $(DIR)
   env:
     ARM_SUBSCRIPTION_ID: $(SUB)
+#################
+# visualize json file here: https://hieven.github.io/terraform-visual/plan-details
 
 - task: AzureCLI@2
   name: apply
