@@ -19,7 +19,7 @@ module "nickname" {
   source = "github.com/Trainer-AJ/Intralot-Training/labs/codes/modules-demo//blob_static_site?ref=main"
   
   index_document        = "./content/index.html"
-  error_404_document    = "./content/custom_error.html"
+  error_404_document    = "./content/custom_not_found.html"
 }
 
 
