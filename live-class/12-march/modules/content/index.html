@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure DevOps with Terraform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+        }
+        h2 {
+            font-size: 1.2em;
+            color: #2980b9;
+            margin-top: 20px;
+        }
+        .time {
+            font-size: 1.5em;
+            color: #e74c3c;
+            margin-top: 20px;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Training of Azure DevOps with Terraform!</h1>
+        <h2>Learn to automate your infrastructure deployment.</h2>
+        <div class="time">
+            <p id="dateTime"></p>
+        </div>
+        <footer>
+            <p>&copy; 2025 Ananay. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            const date = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit',
+                hour12: true 
+            };
+            const formattedDate = date.toLocaleDateString('en-US', options);
+            document.getElementById('dateTime').textContent = `Today's date and time: ${formattedDate}`;
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();  // Initial call to display the time immediately
+    </script>
+</body>
+</html>
