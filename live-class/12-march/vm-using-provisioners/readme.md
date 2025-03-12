@@ -31,4 +31,9 @@ terraform plan
 ```
 
 
+## Done with above... feeling bored .... below is an extra task:
+> create Azure windows **vm size: Standard_D2s_v3** with IIS installed using terraform provisioners
+command to install  IIS: google it please :) 
+
+
 
