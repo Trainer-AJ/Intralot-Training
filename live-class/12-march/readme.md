@@ -1,5 +1,7 @@
 To create an Azure SQL Server using Terraform with a backend for storing the state, you’ll need to follow these steps. The process involves configuring the Terraform provider, setting up the backend for state management, and creating resources for the Azure SQL Server.
 
+### step 0: launch xtremelabs => take labs => register for MFA => i button => cloud express
+
 ### Step 1:
 git pull to get latest code
 
@@ -155,6 +157,7 @@ resource "azurerm_sql_database" "example" {
   }
 }
 ```
+# By the end of the lab : A MS SQL Server should be crated with no tfstate file in your local computer
 
 ### Step 12: (Optional) Destroy Resources
 If you want to clean up and remove all created resources, you can run the following command:
@@ -162,3 +165,5 @@ If you want to clean up and remove all created resources, you can run the follow
 ```bash
 terraform destroy
 ```
+
+
