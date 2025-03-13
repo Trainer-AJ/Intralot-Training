@@ -15,8 +15,10 @@ pool:
   vmImage: ubuntu-latest
 #========================================
 variables:
-- name: SUB
-  value: "your-service-connection"
+- name: SUBCRIPTION_ID
+  value: "your-subscription-id"
+- name: service_connection
+  value: "your-service-connection-name"
 - name: DIR
   value: "labs/codes/oidc-aks"
 # ================================================
@@ -47,7 +49,7 @@ steps:
     addSpnToEnvironment: true
     workingDirectory: $(DIR)
   env:
-    ARM_SUBSCRIPTION_ID: $(SUB)
+    ARM_SUBSCRIPTION_ID: $(SUBCRIPTION_ID)
 #################
 # visualize json file here: https://hieven.github.io/terraform-visual/plan-details
 
@@ -62,4 +64,4 @@ steps:
     addSpnToEnvironment: true
     workingDirectory: $(DIR)
   env:
-    ARM_SUBSCRIPTION_ID: $(SUB)
+    ARM_SUBSCRIPTION_ID: $(SUBCRIPTION_ID)
