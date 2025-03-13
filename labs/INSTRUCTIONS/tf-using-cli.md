@@ -20,7 +20,7 @@ variables:
 - name: service_connection
   value: "service-connection-name-check-it-on-Azure-devops-project-settings"
 - name: DIR
-  value: "labs/codes/oidc-aks"
+  value: "labs/INSTRUCTIONS/oidc-aks"
 # ================================================
 
 steps:
