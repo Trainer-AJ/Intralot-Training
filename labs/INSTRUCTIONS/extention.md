@@ -5,7 +5,7 @@
 1. **Create an Azure DevOps Project**: If you don’t already have one, create a new project in Azure DevOps.
    
 2. **Install Terraform Extension**:
-   - Go to the ORGANIZATION SETTINGS ==> left side ==>  **Azure DevOps marketplace** and search for the **Terraform extension**.
+   - Go to the ORGANIZATION SETTINGS ==> left side ==>  **extentions**  ==>**on top right side** ==> browse marketplace and search for the **Terraform extension**.
    - Install the **Terraform** extension to your Azure DevOps organization. This extension will provide the necessary tasks for working with Terraform.
 
 3. **Service Connection to Azure** if NOT DONE ALREADY:
