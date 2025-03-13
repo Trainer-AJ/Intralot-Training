@@ -16,9 +16,9 @@ pool:
 #========================================
 variables:
 - name: SUBCRIPTION_ID
-  value: "your-subscription-id"
+  value: "your-subscription-id-check-from-azure-portal"
 - name: service_connection
-  value: "your-service-connection-name"
+  value: "service-connection-name-check-it-on-Azure-devops-project-settings"
 - name: DIR
   value: "labs/codes/oidc-aks"
 # ================================================
@@ -26,7 +26,7 @@ variables:
 steps:
 # - task: AzureKeyVault@2
 #   inputs:
-#     azureSubscription: 'oidc'
+#     azureSubscription: $(service_connection)
 #     KeyVaultName: 'ts76'
 #     SecretsFilter: '*'
 #     RunAsPreJob: true
@@ -34,7 +34,7 @@ steps:
   name: set_variables
   displayName: setup 
   inputs:
-    azureSubscription: 'oidc'
+    azureSubscription: $(service_connection)
     scriptType: 'pscore'
     scriptLocation: 'inlineScript'
     inlineScript: |
@@ -57,7 +57,7 @@ steps:
   name: apply
   displayName: apply
   inputs:
-    azureSubscription: 'oidc'
+    azureSubscription: $(service_connection)
     scriptType: 'pscore'
     scriptLocation: 'inlineScript'
     inlineScript: 'terraform apply --auto-approve'
@@ -65,3 +65,4 @@ steps:
     workingDirectory: $(DIR)
   env:
     ARM_SUBSCRIPTION_ID: $(SUBCRIPTION_ID)
+```
