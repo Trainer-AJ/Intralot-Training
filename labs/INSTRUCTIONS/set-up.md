@@ -33,7 +33,7 @@ lab:
 
 1. Select **Setup billing** and on the right-hand side of the screen, select your **Azure Subscription** and then select **Save** to link the subscription with the organization.
 
-1. Once the screen shows the linked Azure Subscription ID at the top, change the number of **Paid parallel jobs** for **MS Hosted CI/CD** from 0 to **1**. Then select **SAVE** button at the bottom.
+1. Once the screen shows the linked Azure Subscription ID at the top, change the number of **Paid parallel jobs** for **MS Hosted CI/CD** from 0 to **3**. Then select **SAVE** button at the bottom.
 
    > **Note**: You may **wait a couple of minutes before using the CI/CD capabilities** so that the new settings are reflected in the backend. Otherwise, you will still see the message _"No hosted parallelism has been purchased or granted"_.
 
@@ -53,17 +53,17 @@ lab:
 
 > **Note**: make sure you completed the steps to create your Azure DevOps Organization before continuing with these steps.
 
-To follow all lab instructions, you'll need set up a new Azure DevOps project, create a repository that's based on the [eShopOnWeb](https://github.com/MicrosoftLearning/eShopOnWeb) application, and create a service connection to your Azure subscription.
+To follow all lab instructions, you'll need set up a new Azure DevOps project, create a repository that's based on the [intralot](https://github.com/Trainer-AJ/Intralot-Training.git) application, and create a service connection to your Azure subscription.
 
 ### Create the team project
 
-First, you'll create an **eShopOnWeb** Azure DevOps project to be used by several labs.
+First, you'll create an **intralot** Azure DevOps project to be used by several labs.
 
 1. Open your browser and navigate to your Azure DevOps organization.
 
 1. Select the **New Project** option and use the following settings:
 
-   - name: **eShopOnWeb**
+   - name: **intralot**
    - visibility: **Private**
    - Advanced: Version Control: **Git**
    - Advanced: Work Item Process: **Scrum**
@@ -73,40 +73,3 @@ First, you'll create an **eShopOnWeb** Azure DevOps project to be used by severa
    ![Screenshot of the create new project panel.](images/create-project.png)
 
 
-### Create a service connection to access Azure resources
-
-You will need to create a service connection in Azure DevOps which will allow you to deploy and access resources in your Azure subscription.
-
-1. Start a web browser, navigate to the Azure DevOps portal `https://aex.dev.azure.com`.
-
-1. Sign in to the Azure DevOps organization.
-
-   > **Note**: If this is the first time you are signing in to the Azure DevOps organization, you will be prompted create your profile and accept the terms of service, and then select **Continue**.
-
-1. Open **eShopOnWeb** project, and select **Project settings** in the bottom left corner of the portal.
-
-1. Select the **Service connections** under Pipelines, and then select **Create service connection** button.
-
-   ![Screenshot of the new service connection creation button.](images/new-service-connection.png)
-
-1. On the **New service connection** blade, select **Azure Resource Manager** and **Next** (you may need to scroll down).
-
-1. Select **App registration (automatic)** from the **Identity type** dropbox.
-
-1. Select **Workload Identity federation** and **Subscription** under the **Scope level**.
-
-   > **Note**: You can also use **App registration or managed identity (manual)** if you prefer to manually configure the service connection. Follow the steps in the [Azure DevOps documentation](https://learn.microsoft.com/azure/devops/pipelines/library/connect-to-azure) to create the service connection manually.
-
-1. Fill in the empty fields using the information:
-
-   - **Subscription**: Select your Azure subscription.
-   - **Resource group**: Select the resource group where you want to deploy resources. If you don't have a resource group, you can create one in the Azure portal following the instructions in [Manage Azure resource groups by using the Azure portal](https://learn.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal).
-   - **Service connection name**: Type **`azure subs`**. This name will be referenced in YAML pipelines to access your Azure subscription.
-
-1. Make sure the **Grant access permission to all pipelines** option is unchecked and select **Save**.
-
-   > **Important:** The **Grant access permission to all pipelines** option is not recommended for production environments. It is only used in this lab to simplify the configuration of the pipeline.
-
-   > **Note**: If you see an error message indicating you don't have the necessary permissions to create a service connection, try again, or configure the service connection manually.
-
-You have now completed the necessary prerequisite steps to continue with the labs.
