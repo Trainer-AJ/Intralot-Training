@@ -5,13 +5,34 @@
 1. **Create an Azure DevOps Project**: If you don’t already have one, create a new project in Azure DevOps.
    
 2. **Install Terraform Extension**:
-   - Go to the **Azure DevOps marketplace** and search for the **Terraform extension**.
+   - Go to the ORGANIZATION SETTINGS ==> left side ==>  **Azure DevOps marketplace** and search for the **Terraform extension**.
    - Install the **Terraform** extension to your Azure DevOps organization. This extension will provide the necessary tasks for working with Terraform.
 
-3. **Service Connection to Azure**:
+3. **Service Connection to Azure** if NOT DONE ALREADY:
    - In Azure DevOps, go to your project settings.
    - Under **Service connections**, create a new **Azure Resource Manager** service connection. This connection will be used by Terraform to authenticate and interact with Azure resources.
 
+### create a storage account -- run this is azure cloudshell
+```sh
+# Set environment variables (replace with your values)
+RESOURCE_GROUP="terraform-backend-rg"
+STORAGE_ACCOUNT="tfstatebackend$RANDOM"  # Storage account name must be globally unique
+CONTAINER_NAME="tfstate"
+
+# Create resource group
+az group create --name $RESOURCE_GROUP --location "East US"
+
+# Create storage account
+az storage account create --name $STORAGE_ACCOUNT --resource-group $RESOURCE_GROUP --location "East US" --sku Standard_LRS
+
+# Get storage account key
+ACCOUNT_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP --account-name $STORAGE_ACCOUNT --query '[0].value' -o tsv)
+
+# Create container
+az storage container create --name $CONTAINER_NAME --account-name $STORAGE_ACCOUNT --account-key $ACCOUNT_KEY
+
+```
+### GO and check storage account name in azure portal ==> note it down 
 
 ### Step 2: Create the YAML Pipeline
 
@@ -20,12 +41,60 @@
 3. Add the following sample YAML code to define the Terraform pipeline. This example assumes you're using the **Terraform Extension** in Azure DevOps.
 
 ### Example Pipeline YAML
-go to left side pipeline option
-click on `New Pipeline` the blue button on top right side
-choose first option => azure repos git 
-click on `eshoponweb`
+- go to left side pipeline option
+- click on `New Pipeline` the blue button on top right side
+- choose first option => azure repos git 
+- click on `starter pipleine
 
-### paste the below code
+
+```yml
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+# -------------- YOUR VALUES HERE---------------------------
+variables:
+- name: service_connection
+  value: 
+- name: storage_account_name 
+  value: 
+# ---------------------------------
+steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: '$(service_connection)'
+    scriptType: 'bash'
+    scriptLocation: 'scriptPath'
+    scriptPath: 'labs/codes/backend/pre-req.sh'
+
+- task: TerraformInstaller@1
+  inputs:
+    terraformVersion: 'latest'
+
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    workingDirectory: 'labs/codes/vm-using-provisioners'
+    backendAzureRmUseEnvironmentVariablesForAuthentication: true
+    backendServiceArm: '$(service_connection)'
+    backendAzureRmResourceGroupName: 'terraform-backend-rg'
+    backendAzureRmStorageAccountName: $(storage_account_name)
+    backendAzureRmContainerName: 'tfstate'
+    backendAzureRmKey: 'pipeline.tfstate'
+
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    workingDirectory: 'labs/codes/vm-using-provisioners'
+    commandOptions: '-auto-approve'
+    environmentServiceNameAzureRM: '$(service_connection)'
+```
+
+
+## REPLACE THE VARIABLES WITH YOUR VALES
 
 ### click on save and run option on top right side
 
