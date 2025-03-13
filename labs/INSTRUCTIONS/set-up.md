@@ -37,21 +37,7 @@ lab:
 
    > **Note**: You may **wait a couple of minutes before using the CI/CD capabilities** so that the new settings are reflected in the backend. Otherwise, you will still see the message _"No hosted parallelism has been purchased or granted"_.
 
-1. In **Organization Settings**, go to section **Pipelines** and click **Settings**.
 
-1. Toggle the switch to **Off** for **Disable creation of classic build pipelines** and **Disable creation of classic release pipelines**
-
-   > **Note**: The **Disable creation of classic release pipelines** switch sets to **On** hides classic release pipeline creation options such as the **Release** menu in the **Pipeline** section of DevOps projects.
-
-1. In **Organization Settings**, go to section **Security** and click **Policies**.
-
-1. Toggle the switch to **On** for **Allow public projects**
-
-   > **Note**: Extensions used in some labs might require a public project to allow using the free version.
-
-## Instructions to create and configure the Azure DevOps project (you only have to do this once)
-
-> **Note**: make sure you completed the steps to create your Azure DevOps Organization before continuing with these steps.
 
 To follow all lab instructions, you'll need set up a new Azure DevOps project, create a repository that's based on the [intralot](https://github.com/Trainer-AJ/Intralot-Training.git) application, and create a service connection to your Azure subscription.
 
