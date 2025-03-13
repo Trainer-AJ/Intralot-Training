@@ -11,7 +11,7 @@
 3. **Service Connection to Azure** if NOT DONE ALREADY:
    - In Azure DevOps, go to your project settings.
    - Under **Service connections**, create a new **Azure Resource Manager** service connection. This connection will be used by Terraform to authenticate and interact with Azure resources.
-
+   - it will open in new tab.... **once installed get back azure pipleines browser tab**
 ### create a storage account -- run this is azure cloudshell
 ```sh
 # Set environment variables (replace with your values)
