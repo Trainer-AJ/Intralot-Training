@@ -44,8 +44,7 @@ steps:
       Write-Host "##vso[task.setvariable variable=ARM_SUBSCRIPTION_ID]$(az account show --query id -o tsv)"
       Write-Host "##vso[task.setvariable variable=ARM_TENANT_ID]$env:tenantId"
       terraform init -upgrade
-      terraform plan -out tfplan  
-      terraform show -json tfplan > tfplan.json   
+      terraform plan    
     addSpnToEnvironment: true
     workingDirectory: $(DIR)
   env:
