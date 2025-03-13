@@ -6,6 +6,8 @@
 - choose first option => azure repos git
 - click on `starter pipleine`
 
+## paste below code and chnage variables for subscritpion id and service connnection name
+
 ```yml
 trigger:
 - main
