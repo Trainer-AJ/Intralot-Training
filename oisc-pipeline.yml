@@ -1,5 +1,8 @@
-trigger:
+# When to run 
+trigger: none  # manual
+pr:
 - main
+- dev
 
 pool:
   vmImage: ubuntu-latest
