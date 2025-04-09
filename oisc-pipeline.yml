@@ -1,13 +1,15 @@
 # When to run 
 trigger: none  # manual
 pr:
-- main
 - dev
+- conflict
 
 pool:
   vmImage: ubuntu-latest
 
 steps:
+- script: ls -a | grep -i 'Dev-Branch-Specific'
+  displayName: Verify If we're in Dev Branch
 - task: AzureCLI@2
   inputs:
     azureSubscription: 'Azure'
