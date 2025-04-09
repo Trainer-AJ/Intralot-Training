@@ -1,7 +1,7 @@
 # labs:
 1. [First lab -- create resource group](https://github.com/Trainer-AJ/Intralot-Training/blob/main/labs/INSTRUCTIONS/1-first-tf-code.md)
 
-# Intralot-Training
+# Intralot-Training -- Hey Malakas :) 
 
 ## Steps to install Terraform on:
 1. [Windows](installations/windows.md)
