@@ -10,7 +10,7 @@ resources:
     project: first
     source: pipeline # name of source pipeline
     branch: main
-    trigger: True # if parent pipeline runs .. this also runs
+    trigger: true # if parent pipeline runs .. this also runs
     
 jobs: 
 - job: download
