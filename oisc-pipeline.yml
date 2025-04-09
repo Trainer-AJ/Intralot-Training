@@ -8,7 +8,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: ls -a | grep -i 'Dev-Branch-Specific'
+- bash: ls -a | grep -i 'Dev-Branch-Specific'
   displayName: Verify If we're in Dev Branch
 - task: AzureCLI@2
   inputs:
