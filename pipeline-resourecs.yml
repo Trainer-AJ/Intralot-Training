@@ -1,0 +1,26 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+resources:
+  pipelines:
+  - pipeline: parent # nickname to reference later
+    project: first
+    source: pipeline # name of source pipeline
+    branch: main
+    trigger: True # if parent pipeline runs .. this also runs
+    
+jobs: 
+- job: download
+  steps:
+  - download: parent
+    artifact: drop # name of folder thats published 
+    patterns: '**/*'
+  
+  - bash: ls -ltr  $(PIPELINE.WORKSPACE)/parent/drop
+  
+
+
+
